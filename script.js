@@ -1,4 +1,4 @@
-import demoVideo from './assets/demo_video.mp4';
+import demoVideo from './assets/demo_video_compressed.mp4';
 
 const video = document.querySelector('.video-frame video');
 if (video) video.src = demoVideo;

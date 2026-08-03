@@ -9,3 +9,5 @@
 .real-world-section .single-figure{width:min(100%,900px);margin-inline:auto}
 .real-world-section .single-figure img{display:block;width:100%;height:auto}
 .real-world-section{margin-top:8px}
+.video-frame{aspect-ratio:16 / 9}
+.video-frame video{height:100%;object-fit:contain}
