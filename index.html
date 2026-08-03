@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Track4Action: Distilling World-Centric 3D Tracker into Vision-Language-Action Policies." />
+    <meta property="og:title" content="Track4Action" />
+    <meta property="og:description" content="Aligning world-centric 3D tracking with vision-language-action policies for robot manipulation." />
+    <title>Track4Action: Distilling World-Centric 3D Tracker into Vision-Language-Action Policies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./overrides.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="hero">
+        <h1><span class="title-brand">Track4Action</span>: Distilling World-Centric 3D Tracker into<br class="desktop" /> Vision-Language-Action Policies</h1>
+        <p class="authors">Chenyi Wang<sup>1,3*</sup> · Xinkai Wang<sup>3*</sup> · Bokai Lin<sup>2,3</sup> · Jialin Tian<sup>2,3</sup> · Fucheng Zhang<sup>3</sup><br />Lixin Yang<sup>2,3†</sup> · Cewu Lu<sup>2,3,4†</sup></p>
+        <p class="affiliation"><sup>1</sup>Zhejiang University, China · <sup>2</sup>Shanghai Jiao Tong University, China<br /><sup>3</sup>Shanghai Innovation Institute, China · <sup>4</sup>Noematrix, China<br /><span class="contact">chenyiwang@sii.edu.cn · siriusyang@sjtu.edu.cn</span><br /><small>* Equal contribution · † Corresponding author</small></p>
+        <div class="links" aria-label="Project links">
+          <a href="https://wing0night.github.io/track4action-project-page/" target="_blank" rel="noreferrer">📄 Paper</a>
+          <a href="https://wing0night.github.io/track4action-project-page/" target="_blank" rel="noreferrer">🤗 Checkpoints</a>
+          <a href="#demo">🎬 Demo</a>
+          <a href="https://wing0night.github.io/track4action-project-page/" target="_blank" rel="noreferrer">💻 Code</a>
+        </div>
+      </header>
+
+      <section class="lead-statement">
+        <p>Track4Action distills <strong>action-aligned 3D world transitions</strong> from demonstration videos into a vision-language-action policy.</p>
+      </section>
+
+      <section class="content-section method-figure-section">
+        <h2>Model Architecture</h2>
+        <img class="model-figure" src="assets/model_arch.png" alt="Track4Action model architecture" />
+        <p class="caption">Track4Action aligns a frozen world-centric 3D tracker with the VLA hidden states and action head during training.</p>
+      </section>
+
+      <section class="content-section abstract-section">
+        <h2>Abstract</h2>
+        <p>Vision-language-action (VLA) policies are strong at instruction grounding and broad-task generalization, but they often rely on weakly structured 2D observations and under-utilize explicit 3D motion cues. In contrast, world-centric trackers can recover geometry, visibility, and temporal correspondence, yet they are not directly executable as robot policies.</p>
+        <p>We present <strong>Track4Action</strong>, a framework for turning world-centric tracking into robot action prediction. A frozen <strong>Track4World</strong> teacher produces geometry-aware features from aligned demonstration clips. A VLA policy learns tracker-aligned query tokens from its own multimodal hidden states, and a shared flow-matching action head turns those features into action chunks. Crucially, the tracker is used only as training-time privileged supervision; future video and the tracker are removed during deployment.</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Method</h2>
+        <div class="method-grid">
+          <article><h3>World-centric teacher</h3><p>Track4World exposes scene geometry, 3D motion, visibility, and camera cues from short aligned video clips.</p></article>
+          <article><h3>Track-token alignment</h3><p>Learnable query tokens read from the VLA hidden states and align with the frozen tracker representation.</p></article>
+          <article><h3>Tracker-free deployment</h3><p>The teacher is needed only during training. At inference, the policy uses the current observation, language, and learned aligned bottleneck.</p></article>
+        </div>
+      </section>
+
+      <section class="content-section" id="demo">
+        <h2>Demo Video</h2>
+        <div class="video-frame"><video controls preload="metadata" poster="assets/video-poster.jpg">Your browser does not support the video tag.</video></div>
+      </section>
+
+      <section class="content-section real-world-section">
+        <h2>Real-World Experiments</h2>
+        <figure class="single-figure"><img src="assets/real-world-exp.png" alt="Real-world experimental platform and task settings" /><figcaption>Real-world bimanual evaluation across task and environment shifts.</figcaption></figure>
+      </section>
+
+      <section class="content-section">
+        <h2>Experiments</h2>
+        <p>Track4Action improves both in-distribution manipulation and robustness to unseen visual changes.</p>
+        <div class="stats"><div><strong>97.0%</strong><span>LIBERO</span></div><div><strong>82.3%</strong><span>LIBERO-PLUS · ZERO-SHOT</span></div><div><strong>80.44 / 81.48%</strong><span>ROBOTWIN · CLEAN / RANDOMIZED</span></div><div><strong>+25 pts</strong><span>REAL-WORLD GAIN</span></div></div>
+      </section>
+
+      <section class="content-section conclusion"><h2>Takeaway</h2><p>Demonstration video can supervise both <strong>what to execute</strong> and <strong>how the world should change</strong>—while preserving tracker-free deployment.</p></section>
+
+      <section class="content-section citation" id="citation"><h2>Citation</h2><p>If you find this work useful, please consider citing:</p><pre><code>@article{track4action,
+  title={Track4Action: Distilling World-Centric 3D Tracker into Vision-Language-Action Policies},
+  author={Wang, Chenyi and Wang, Xinkai and Lin, Bokai and Tian, Jialin and Zhang, Fucheng and Yang, Lixin and Lu, Cewu}
+}</code></pre></section>
+    </main>
+    <footer>Track4Action · Research Project · <a href="#top">Back to top ↑</a></footer>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

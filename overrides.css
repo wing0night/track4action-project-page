@@ -1,0 +1,11 @@
+.authors{line-height:1.65}
+.authors sup{font-size:11px;color:#6c7890}
+.affiliation{line-height:1.6}
+.affiliation sup{font-size:11px}
+.affiliation small{font-size:12px}
+.contact{font-size:14px}
+.title-brand{color:#5577a8}
+.model-figure{display:block;width:100%;max-width:960px;height:auto;margin:22px auto 11px;border:1px solid #dfe3ea;border-radius:7px}
+.real-world-section .single-figure{width:min(100%,900px);margin-inline:auto}
+.real-world-section .single-figure img{display:block;width:100%;height:auto}
+.real-world-section{margin-top:8px}
