@@ -10,6 +10,7 @@
 .track-line{display:inline-block;width:42px;height:10px;opacity:.76;background:linear-gradient(90deg,transparent 0 5%,#8799b5 5% 8%,transparent 8% 17%,#8799b5 17% 21%,transparent 21% 29%,#8799b5 29% 32%,transparent 32% 42%,#8799b5 42% 47%,transparent 47% 55%,#8799b5 55% 58%,transparent 58% 71%,#8799b5 71% 76%,transparent 76% 84%,#8799b5 84% 88%,transparent 88%);border-bottom:1px solid #aeb9ca}
 .model-figure{display:block;width:100%;max-width:960px;height:auto;margin:22px auto 11px;border:1px solid #dfe3ea;border-radius:7px}
 .real-world-section .single-figure{width:min(100%,900px);margin-inline:auto}
+.lead-statement{font-family:var(--round),Arial,sans-serif;font-weight:600}
 .real-world-section .single-figure img{display:block;width:100%;height:auto}
 .real-world-section{margin-top:8px}
 .video-frame{aspect-ratio:16 / 9}
